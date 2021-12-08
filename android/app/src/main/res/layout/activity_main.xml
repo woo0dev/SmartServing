@@ -67,10 +67,14 @@
         android:layout_alignStart="@+id/messageText"
         android:layout_marginTop="13dp" />
 
-    <WebView
-        android:layout_width="fill_parent"
+    <Button
+        android:text="Camera"
+        android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:id="@+id/buttonCamera"
         android:layout_below="@+id/buttonConnect"
-        android:id="@+id/webView" />
+        android:layout_alignStart="@+id/buttonConnect"
+        android:layout_marginTop="13dp" />
+
 
 </RelativeLayout>

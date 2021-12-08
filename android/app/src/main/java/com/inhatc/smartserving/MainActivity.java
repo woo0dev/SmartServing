@@ -8,6 +8,7 @@ import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.TextView;
+import android.content.Intent;
 
 import java.io.ByteArrayOutputStream;
 import java.io.IOException;
@@ -25,7 +26,7 @@ public class MainActivity extends AppCompatActivity {
     // 컴포넌트 정의
     TextView recieveText;
     EditText editTextAddress, editTextPort, messageText;
-    Button connectBtn, clearBtn;
+    Button connectBtn, clearBtn, cameraBtn;
 
     // 소켓통신을 위한 소켓 생성
     Socket socket = null;
@@ -43,6 +44,7 @@ public class MainActivity extends AppCompatActivity {
         editTextPort = (EditText) findViewById(R.id.portText);
         recieveText = (TextView) findViewById(R.id.textViewReciev);
         messageText = (EditText) findViewById(R.id.messageText);
+        cameraBtn = (Button) findViewById(R.id.buttonCamera);
 
         //connect 버튼 클릭
         connectBtn.setOnClickListener(new View.OnClickListener() {
@@ -63,7 +65,18 @@ public class MainActivity extends AppCompatActivity {
             }
         });
 
+        //camera 버튼 클릭
+        cameraBtn.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent = new Intent(MainActivity.this, Camera.class);
+                startActivity(intent);
+            }
+        });
+
     }
+
+
 
     public class MyClientTask extends AsyncTask<Void, Void, Void> {
         String dstAddress;
