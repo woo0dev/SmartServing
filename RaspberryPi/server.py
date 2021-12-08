@@ -1,4 +1,5 @@
 import socket
+from subprocess import call
 
 HOST = ""
 PORT = 8888
@@ -11,14 +12,15 @@ print ('Socket now listening')
 
 #파이 컨트롤 함수
 def do_some_stuffs_with_input(input_string):
+    global pan_pos
+
 	#라즈베리파이를 컨트롤할 명령어 설정
 	if input_string == "left":
+                pan_pos +=10
+                if pan_pos >=max_pos:
+                    pan_pos =max_pos
 		input_string = "서보모터 좌회전 합니다."
-		#파이 동작 명령 추가할것
-	elif input_string == "right":
-		input_string = "서보모터 우회전 합니다."
-	elif input_string == "single":
-		input_string = "사진을 찍습니다."
+                call("echo 0="+str(pan_pos)+" > /dev/servoblaster", shell= True)
 	else :
 		input_string = input_string + " 없는 명령어 입니다."
 	return input_string
