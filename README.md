@@ -73,11 +73,13 @@
     - GitHub: 소프트웨어 개발 프로젝트를 위한 소스코드 관리서비스, 버전 관리를 위해 사용
     - AndroidStudio: 안드로이드 전용 어플(앱) 제작을 위한 통합 개발 환경(IDE)<br>
 - ### 구현 과정
-    - ServoBlaster 설치
+    - ###ServoBlaster 설치
     <img src="./img/서보블라스터_설치.png">
-    - ServoBlaster 데몬 실행
+    
+    - ###ServoBlaster 데몬 실행
     <img src="./img/서보블라스터_데몬_실행.png">
-    - ServoBlaster 정보
+    
+    - ###ServoBlaster 정보
     <img src="./img/블라스터_.png">
 ***
 
