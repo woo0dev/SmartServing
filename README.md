@@ -147,7 +147,7 @@
 	    <pre><code> pi@raspberrypi:~ $ sudo service motion start </code></pre>
 	    
     - #### 안드로이드 소켓 통신 구현
-    	   <img src="/img/socket.png" width="200" height="200">  
+    	   <img src="./img/socket.png">  
 
 # 4. 개발 결과
 ***
