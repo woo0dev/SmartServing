@@ -127,11 +127,11 @@
 	    
 	    // 라즈베리파이를 컨트롤할 명령어 설정
 	    if input_string == "FEED":
-		pan_pos +=100
+		pan_pos +=250
 		if pan_pos >=max_pos:
 		    pan_pos =max_pos
 		input_string = "사료를 배급합니다.."
-		call("echo 0="+str(pan_pos)+"%"+" > /dev/servoblaster", shell= True)
+		call("echo 0="+str(pan_pos)+" > /dev/servoblaster", shell= True)
 	    else :
 		input_string = input_string + " 없는 명령어 입니다."
 	    return input_string
