@@ -148,10 +148,10 @@
 	    <pre><code> pi@raspberrypi:~ $ sudo service motion start </code></pre>
 	    
     - #### 안드로이드 소켓 통신 구현
-	<img src="./img/socket.png">
+	<img width="{30%" src="./img/socket.png">
 	
-    - ####안드로이드 WebView 구현
-    	<img src="./img/webview.png">
+    - #### 안드로이드 WebView 구현
+    	<img width="{80%" src="./img/webview.png">
 
 - ### 문제 해결
     - #### WebView가 정상적으로 동작하지 않는 문제(ERR_CLEARTEXT_NOT_PERMITTIED)
