@@ -73,12 +73,18 @@
     - GitHub: 소프트웨어 개발 프로젝트를 위한 소스코드 관리서비스, 버전 관리를 위해 사용
     - AndroidStudio: 안드로이드 전용 어플(앱) 제작을 위한 통합 개발 환경(IDE)<br>
 - ### 구현 과정
-1.### ServoBlaster 설치
-<img src="./img/서보블라스터_설치.png">    
-2.### ServoBlaster 데몬 실행
-<img src="./img/서보블라스터_데몬_실행.png">    
-3.### ServoBlaster 정보
-<img src="./img/블라스터_정보.png">
+- #### 모터 제어 구현
+   - ServoBlaster 설치
+    <pre><code> pi@raspberrypi:~ $ git clone https://github.com/richardghirst/PiBits </code></pre>
+    
+   - ServoBlaster 데몬 실행
+    <pre><code> pi@raspberrypi:~/PiBits/ServoBlaster/user $ sudo make install </code></pre>
+    
+   - ServoBlaster 정보
+    <pre><code> pi@raspberrypi:~/PiBits/ServoBlaster/user $ sudo ./servod </code></pre>
+
+- #### 소켓 통신 서버 구현
+    - 
 ***
 
 # 4. 개발 결과
