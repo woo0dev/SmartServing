@@ -35,13 +35,13 @@
     - 앱 내부의 버튼을 통한 사료 배식 기능
     - 앱 내부의 화면을 통한 실시간 반려동물 확인 및 관리 기능
    
-- ### 설계
+- ### 설계 
+     <img src="./img/회로도.png"><br>
      <img src="./img/회로도 아이콘.jpg">
-***
 <br>
   
 # 2. 개발 준비
-
+***
 - ### 제작재료
     | 재료 | 구매주소 | 수량 | 가격대 |
     |---|---|---|---|
@@ -64,9 +64,9 @@
     
  - ### 간트 차트
      <img src="./img/개발일정.png">
-***
     
 # 3. 개발 과정
+***
 - ### 개발 환경
     - Raspbian: 라즈베리파이에 최적화, Xwindow를 사용할 수 있는 OS  
     - VNC Viewer: 라즈베리를 원격으로 다루기 위해 사용하는 원격 데스크톱 클라이언트
@@ -146,27 +146,27 @@
 	    <pre><code> pi@raspberrypi:~ $ sudo service motion start </code></pre>
 	    
     - #### 안드로이드 소켓 통신 구현
-    	   ```
-			socket = new Socket(dstAddress, dstPort);
+    	   ```Java
+	   	socket = new Socket(dstAddress, dstPort);
 
-			//송신
-			OutputStream out = socket.getOutputStream();
-			out.write(myMessage.getBytes());
+                //송신
+                OutputStream out = socket.getOutputStream();
+                out.write(myMessage.getBytes());
 
-			//수신
-			ByteArrayOutputStream byteArrayOutputStream = new ByteArrayOutputStream(1024);
-			byte[] buffer = new byte[1024];
-			int bytesRead;
-			InputStream inputStream = socket.getInputStream();
-			while ((bytesRead = inputStream.read(buffer)) != -1){
-			    byteArrayOutputStream.write(buffer, 0, bytesRead);
-			    response += byteArrayOutputStream.toString("UTF-8");
-			}
-			response = "서버의 응답: " + response;
+                //수신
+                ByteArrayOutputStream byteArrayOutputStream = new ByteArrayOutputStream(1024);
+                byte[] buffer = new byte[1024];
+                int bytesRead;
+                InputStream inputStream = socket.getInputStream();
+                while ((bytesRead = inputStream.read(buffer)) != -1){
+                    byteArrayOutputStream.write(buffer, 0, bytesRead);
+                    response += byteArrayOutputStream.toString("UTF-8");
+                }
+                response = "서버의 응답: " + response;
 	   ```
-***
 
 # 4. 개발 결과
+***
 - ### 결과 화면
     * **사료배급 기능**<br>
        <img width="{80%" src="./gif/cctv.gif">
