@@ -39,7 +39,7 @@
    
 - ### 설계 
      <img src="./img/회로도.png"><br>
-     <img src="./img/.jpg">
+     <img src="./img/설계.jpg">
 <br>
   
 # 2. 개발 준비
