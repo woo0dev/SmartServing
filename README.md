@@ -167,6 +167,9 @@
 # 4. 개발 결과
 ***
 - ### 결과 화면
+    * **사료배급 어플 화면**<br>
+    <img src="./img/사료배급_1.jpeg">
+    <img src="./img/사료배급.jpeg">
     * **사료배급 기능**<br>
        <img width="{80%" src="./gif/cctv.gif">
     * **CCTV 기능**<br>
