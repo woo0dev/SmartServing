@@ -117,10 +117,7 @@
    - ServoBlaster 데몬 실행
     <pre><code> pi@raspberrypi:~/PiBits/ServoBlaster/user $ sudo make install </code></pre>
     
-   - ServoBlaster 정보
-    <pre><code> pi@raspberrypi:~/PiBits/ServoBlaster/user $ sudo ./servod </code></pre>
-    
-    - 서버파일에 ServoBlaster 코드 추가
+   - 서버파일에 ServoBlaster 코드 추가
     <pre><code>
     def do_some_stuffs_with_input(input_string):
     pan_pos=0
