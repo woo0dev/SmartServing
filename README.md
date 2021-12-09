@@ -147,22 +147,22 @@
 	    
     - #### 안드로이드 소켓 통신 구현
     	   ```Java
-	   	socket = new Socket(dstAddress, dstPort);
+	   socket = new Socket(dstAddress, dstPort);
 
-                //송신
-                OutputStream out = socket.getOutputStream();
-                out.write(myMessage.getBytes());
+           //송신
+           OutputStream out = socket.getOutputStream();
+           out.write(myMessage.getBytes());
 
-                //수신
-                ByteArrayOutputStream byteArrayOutputStream = new ByteArrayOutputStream(1024);
-                byte[] buffer = new byte[1024];
-                int bytesRead;
-                InputStream inputStream = socket.getInputStream();
-                while ((bytesRead = inputStream.read(buffer)) != -1){
-                    byteArrayOutputStream.write(buffer, 0, bytesRead);
-                    response += byteArrayOutputStream.toString("UTF-8");
-                }
-                response = "서버의 응답: " + response;
+           //수신
+           ByteArrayOutputStream byteArrayOutputStream = new ByteArrayOutputStream(1024);
+           byte[] buffer = new byte[1024];
+           int bytesRead;
+           InputStream inputStream = socket.getInputStream();
+           while ((bytesRead = inputStream.read(buffer)) != -1){
+                byteArrayOutputStream.write(buffer, 0, bytesRead);
+                response += byteArrayOutputStream.toString("UTF-8");
+           }
+           response = "서버의 응답: " + response;
 	   ```
 
 # 4. 개발 결과
