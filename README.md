@@ -116,9 +116,6 @@
 	   - ServoBlaster 설치
 	    <pre><code> pi@raspberrypi:~ $ sudo git clone https://github.com/richardghirst/PiBits </code></pre>
 
-	   - ServoBlaster 데몬 실행
-	    <pre><code> pi@raspberrypi:~/PiBits/ServoBlaster/user $ sudo make install </code></pre>
-
 	    - echo 명령어로 모터 제어
 	    <pre><code> pi@raspberrypi:~ $ echo 0=150 > /dev/servoblaster </code></pre>
 
@@ -146,6 +143,9 @@
 
 	   - motion service 실행
 	    <pre><code> pi@raspberrypi:~ $ sudo service motion start </code></pre>
+	    
+	   - 스트리밍 화면 확인
+	    <pre><code> http://[라즈베리파이IP주소]:[포트번호] </code></pre>
 	    
     - #### 안드로이드 소켓 통신 구현
 	<img width="{30%" src="./img/socket.png">
