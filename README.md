@@ -73,7 +73,7 @@
     - GitHub: 소프트웨어 개발 프로젝트를 위한 소스코드 관리서비스, 버전 관리를 위해 사용
     - AndroidStudio: 안드로이드 전용 어플(앱) 제작을 위한 통합 개발 환경(IDE)<br>
 - ### 구현 과정
-    - #### **소켓 통신 서버 구현**
+    - #### 소켓 통신 서버 구현
 	    - 소켓 서버 
 	    <pre><code>
 	    import socket
@@ -110,7 +110,7 @@
 	    s.close()
 	    </code></pre>
 
-    - #### **모터 제어 구현**
+    - #### 모터 제어 구현
 	   - ServoBlaster 설치
 	    <pre><code> pi@raspberrypi:~ $ sudo git clone https://github.com/richardghirst/PiBits </code></pre>
 
@@ -138,12 +138,32 @@
 	    return input_string
 	    </pre></code>
 	    
-    - #### **실시간 캠 구현**
+    - #### 실시간 캠 구현
 	   - 스트리밍 프로그램 motion 설치
 	    <pre><code> pi@raspberrypi:~ $ sudo apt-get install motion </code></pre>
 
 	   - motion service 실행
 	    <pre><code> pi@raspberrypi:~ $ sudo service motion start </code></pre>
+	    
+    - #### 안드로이드 소켓 통신 구현
+    	   ```AndroidStudio
+	   	socket = new Socket(dstAddress, dstPort);
+
+                //송신
+                OutputStream out = socket.getOutputStream();
+                out.write(myMessage.getBytes());
+
+                //수신
+                ByteArrayOutputStream byteArrayOutputStream = new ByteArrayOutputStream(1024);
+                byte[] buffer = new byte[1024];
+                int bytesRead;
+                InputStream inputStream = socket.getInputStream();
+                while ((bytesRead = inputStream.read(buffer)) != -1){
+                    byteArrayOutputStream.write(buffer, 0, bytesRead);
+                    response += byteArrayOutputStream.toString("UTF-8");
+                }
+                response = "서버의 응답: " + response;
+	   ```
 ***
 
 # 4. 개발 결과
