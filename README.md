@@ -70,7 +70,7 @@
 # 4. 개발 결과
 - ### 결과 화면
     * **사료배급 기능**<br>
-        <img width="{80%" src="./gif/사료배급.gif"><br>
+        <img width="{80%" src="./gif/사료배급.gif"><br><br>
     * **CCTV 기능**<br>
        <img width="{80%" src="./gif/cctv.gif">
        
