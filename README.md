@@ -160,7 +160,6 @@
 	<img src="./img/internetPermission.png">
 	
     - #### 실시간 스트리밍화면이 끊기는 문제
-    	<img src="./img/android-error.jpeg" width="150" height="300">
 	#### 해결방법 - /etc/motion/motion.conf 파일에 아래 코드 
 	<img src="./img/스트리밍에러_1.png">
 	<img src="./img/스트리밍에러_2.png">
