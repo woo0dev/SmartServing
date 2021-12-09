@@ -73,77 +73,77 @@
     - GitHub: 소프트웨어 개발 프로젝트를 위한 소스코드 관리서비스, 버전 관리를 위해 사용
     - AndroidStudio: 안드로이드 전용 어플(앱) 제작을 위한 통합 개발 환경(IDE)<br>
 - ### 구현 과정
-- #### 소켓 통신 서버 구현
-    - 소켓 서버 
-    <pre><code>
-    import socket
-    from subprocess import call
+    - #### 소켓 통신 서버 구현
+	    - 소켓 서버 
+	    <pre><code>
+	    import socket
+	    from subprocess import call
 
-    HOST = ""
-    PORT = 8282
-    s = socket.socket(socket.AF_INET, socket.SOCK_STREAM)
-    print ('Socket created')
-    s.bind((HOST, PORT))
-    print ('Socket bind complete')
-    s.listen(1)
-    print ('Socket now listening')
-    
-    while True:
-	    #접속 승인
-        conn, addr = s.accept()
-        print("Connected by ", addr)
+	    HOST = ""
+	    PORT = 8282
+	    s = socket.socket(socket.AF_INET, socket.SOCK_STREAM)
+	    print ('Socket created')
+	    s.bind((HOST, PORT))
+	    print ('Socket bind complete')
+	    s.listen(1)
+	    print ('Socket now listening')
 
-	    #데이터 수신
-        data = conn.recv(1024)
-        data = data.decode("utf8").strip()
-        if not data: break
-        print("Received: " + data)
+	    while True:
+		    #접속 승인
+		conn, addr = s.accept()
+		print("Connected by ", addr)
 
-	    #수신한 데이터로 파이를 컨트롤 
-        res = do_some_stuffs_with_input(data)
-        print("파이 동작 :" + res)
+		    #데이터 수신
+		data = conn.recv(1024)
+		data = data.decode("utf8").strip()
+		if not data: break
+		print("Received: " + data)
 
-	    #클라이언트에게 답을 보냄
-        conn.sendall(res.encode("utf-8"))
-	    #연결 닫기
-        conn.close()
-    s.close()
-    </code></pre>
+		    #수신한 데이터로 파이를 컨트롤 
+		res = do_some_stuffs_with_input(data)
+		print("파이 동작 :" + res)
 
-- #### 모터 제어 구현
-   - ServoBlaster 설치
-    <pre><code> pi@raspberrypi:~ $ sudo git clone https://github.com/richardghirst/PiBits </code></pre>
-    
-   - ServoBlaster 데몬 실행
-    <pre><code> pi@raspberrypi:~/PiBits/ServoBlaster/user $ sudo make install </code></pre>
-    
-    - echo 명령어로 모터 제어
-    <pre><code> pi@raspberrypi:~ $ echo 0=150 > /dev/servoblaster </code></pre>
-    
-   - 서버파일에 ServoBlaster 코드 추가
-    <pre><code>
-    def do_some_stuffs_with_input(input_string):
-    pan_pos=0
-    max_pos=300
+		    #클라이언트에게 답을 보냄
+		conn.sendall(res.encode("utf-8"))
+		    #연결 닫기
+		conn.close()
+	    s.close()
+	    </code></pre>
 
-    #라즈베리파이를 컨트롤할 명령어 설정
-    if input_string == "FEED":
-        pan_pos +=100
-        if pan_pos >=max_pos:
-            pan_pos =max_pos
-        input_string = "사료를 배급합니다.."
-        call("echo 0="+str(pan_pos)+"%"+" > /dev/servoblaster", shell= True)
-    else :
-        input_string = input_string + " 없는 명령어 입니다."
-    return input_string
-    </pre></code>
-    
-- #### 실시간 캠 구현
-   - 스트리밍 프로그램 motion 설치
-    <pre><code> pi@raspberrypi:~ $ sudo apt-get install motion </code></pre>
-    
-   - motion service 실행
-    <pre><code> pi@raspberrypi:~ $ sudo service motion start </code></pre>
+    - #### 모터 제어 구현
+	   - ServoBlaster 설치
+	    <pre><code> pi@raspberrypi:~ $ sudo git clone https://github.com/richardghirst/PiBits </code></pre>
+
+	   - ServoBlaster 데몬 실행
+	    <pre><code> pi@raspberrypi:~/PiBits/ServoBlaster/user $ sudo make install </code></pre>
+
+	    - echo 명령어로 모터 제어
+	    <pre><code> pi@raspberrypi:~ $ echo 0=150 > /dev/servoblaster </code></pre>
+
+	   - 서버파일에 ServoBlaster 코드 추가
+	    <pre><code>
+	    def do_some_stuffs_with_input(input_string):
+	    pan_pos=0
+	    max_pos=300
+	    
+	    // 라즈베리파이를 컨트롤할 명령어 설정
+	    if input_string == "FEED":
+		pan_pos +=100
+		if pan_pos >=max_pos:
+		    pan_pos =max_pos
+		input_string = "사료를 배급합니다.."
+		call("echo 0="+str(pan_pos)+"%"+" > /dev/servoblaster", shell= True)
+	    else :
+		input_string = input_string + " 없는 명령어 입니다."
+	    return input_string
+	    </pre></code>
+	    
+    - #### 실시간 캠 구현
+	   - 스트리밍 프로그램 motion 설치
+	    <pre><code> pi@raspberrypi:~ $ sudo apt-get install motion </code></pre>
+
+	   - motion service 실행
+	    <pre><code> pi@raspberrypi:~ $ sudo service motion start </code></pre>
 ***
 
 # 4. 개발 결과
