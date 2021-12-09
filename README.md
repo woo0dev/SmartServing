@@ -148,7 +148,8 @@
 	    
     - #### 안드로이드 소켓 통신 구현
 	<img src="./img/socket.png">
-    - #### 안드로이드 WebView 구현
+	
+    - ####안드로이드 WebView 구현
     	<img src="./img/webview.png">
 
 - ### 문제 해결
