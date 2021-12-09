@@ -147,7 +147,7 @@
 	    <pre><code> pi@raspberrypi:~ $ sudo service motion start </code></pre>
 	    
     - #### 안드로이드 소켓 통신 구현
-    	```Java
+    	```java
 	socket = new Socket(dstAddress, dstPort);
 
         OutputStream out = socket.getOutputStream();
