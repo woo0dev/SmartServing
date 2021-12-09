@@ -153,6 +153,10 @@
 
 - ### 문제 해결
     - #### WebView가 정상적으로 동작하지 않는 문제(ERR_CLEARTEXT_NOT_PERMITTIED)
+    	<img src="./img/android-error.jpeg">
+	#### 해결방법 - 아래 코드 추가
+	<img src="./img/webViewError.png">
+	<img src="./img/internetPermission.png">
 # 4. 개발 결과
 ***
 - ### 결과 화면
