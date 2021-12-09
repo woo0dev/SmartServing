@@ -112,10 +112,13 @@
 
 - #### 모터 제어 구현
    - ServoBlaster 설치
-    <pre><code> pi@raspberrypi:~ $ git clone https://github.com/richardghirst/PiBits </code></pre>
+    <pre><code> pi@raspberrypi:~ $ sudo git clone https://github.com/richardghirst/PiBits </code></pre>
     
    - ServoBlaster 데몬 실행
     <pre><code> pi@raspberrypi:~/PiBits/ServoBlaster/user $ sudo make install </code></pre>
+    
+    - echo 명령어로 모터 제어
+    <pre><code> pi@raspberrypi:~ $ echo 0=150 > /dev/servoblaster </code></pre>
     
    - 서버파일에 ServoBlaster 코드 추가
     <pre><code>
@@ -134,6 +137,13 @@
         input_string = input_string + " 없는 명령어 입니다."
     return input_string
     </pre></code>
+    
+- #### 실시간 캠 구현
+   - 스트리밍 프로그램 motion 설치
+    <pre><code> pi@raspberrypi:~ $ sudo apt-get install motion </code></pre>
+    
+   - motion service 실행
+    <pre><code> pi@raspberrypi:~ $ sudo service motion start </code></pre>
 ***
 
 # 4. 개발 결과
